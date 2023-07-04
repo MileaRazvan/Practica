@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Aplicatie Practica</string>
+    <string name="text">Pentru a incepe jocul,alege din cele 3 variante de mai jos!</string>
+    <string name="anim">Animale</string>
+    <string name="oras">Orase</string>
+    <string name="masina">Masini</string>
+    <string name="back">Inapoi</string>
+    <string name="buton">Buton</string>
+    <string name="imagine">Imagine</string>
+</resources>
