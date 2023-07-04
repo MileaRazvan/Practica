@@ -7,4 +7,7 @@
     <string name="back">Inapoi</string>
     <string name="buton">Buton</string>
     <string name="imagine">Imagine</string>
+    <string name="TitluOrase">ORASE</string>
+    <string name="TitluAnimale">ANIMALE</string>
+    <string name="TitluMasini">MASINI</string>
 </resources>
