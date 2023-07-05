@@ -10,4 +10,7 @@
     <string name="TitluOrase">ORASE</string>
     <string name="TitluAnimale">ANIMALE</string>
     <string name="TitluMasini">MASINI</string>
+    <string name="This">THIS</string>
+    <string name="That">THAT</string>
+    <string name="Or">OR</string>
 </resources>
