@@ -1,10 +1,12 @@
 package com.example.aplicatiepractica;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -21,18 +23,22 @@ public class MasiniActivity extends AppCompatActivity {
 
 
         ImageView imgmas1 = findViewById(R.id.imgmas1);
+        imgmas1.setScaleType(ImageView.ScaleType.FIT_XY);
         ImageView imgmas2 = findViewById(R.id.imgmas2);
+        imgmas2.setScaleType(ImageView.ScaleType.FIT_XY);
 
         List<Integer> listaMasini = Arrays.asList(
-                R.drawable.braila,
-                R.drawable.roma,
-                R.drawable.constanta,
-                R.drawable.sighisoara,
-                R.drawable.bergamo,
-                R.drawable.timisoara,
-                R.drawable.brasov,
-                R.drawable.bucuresti,
-                R.drawable.galati
+                R.drawable.bmw,
+                R.drawable.eos,
+                R.drawable.fiat,
+                R.drawable.ford,
+                R.drawable.honda,
+                R.drawable.lamborghini,
+                R.drawable.mercedes,
+                R.drawable.nissan,
+                R.drawable.porche,
+                R.drawable.tesla,
+                R.drawable.toyota
         );
 
         Random random = new Random();
@@ -47,10 +53,38 @@ public class MasiniActivity extends AppCompatActivity {
         int randomImage2 = listaMasini.get(RandomIndex2);
         imgmas1.setImageResource(randomImage1);
         imgmas2.setImageResource(randomImage2);
+
+
+
+        Button alegM1 = findViewById(R.id.alegM1);
+        alegM1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent10 = new Intent(MasiniActivity.this, MasiniActivity.class);
+                startActivity(intent10);
+            }
+        });
+
+        Button alegM2 = findViewById(R.id.alegM2);
+        alegM2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent11 = new Intent(MasiniActivity.this, MasiniActivity.class);
+                startActivity(intent11);
+            }
+        });
+
+        Button inapoi = findViewById(R.id.inapoi);
+        inapoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent12 = new Intent(MasiniActivity.this, MainActivity.class);
+                intent12.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent12);
+                finish();
+            }
+        });
     }
 
-    public void backbutton (View view){
-        onBackPressed();
-    }
 
 }

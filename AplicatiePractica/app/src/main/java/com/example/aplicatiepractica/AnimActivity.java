@@ -1,10 +1,12 @@
 package com.example.aplicatiepractica;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -20,17 +22,21 @@ public class AnimActivity extends AppCompatActivity {
         setContentView(R.layout.animale);
 
         ImageView imganim1 = findViewById(R.id.imganim1);
+        imganim1.setScaleType(ImageView.ScaleType.FIT_XY);
         ImageView imganim2 = findViewById(R.id.imganim2);
+        imganim2.setScaleType(ImageView.ScaleType.FIT_XY);
+
         List<Integer> lista = Arrays.asList(
-                R.drawable.braila,
-                R.drawable.roma,
-                R.drawable.constanta,
-                R.drawable.sighisoara,
-                R.drawable.bergamo,
-                R.drawable.timisoara,
-                R.drawable.brasov,
-                R.drawable.bucuresti,
-                R.drawable.galati
+                R.drawable.alpaca,
+                R.drawable.caine,
+                R.drawable.capybara,
+                R.drawable.delfin,
+                R.drawable.kuoka,
+                R.drawable.panda,
+                R.drawable.pisic,
+                R.drawable.veverita,
+                R.drawable.vulpe,
+                R.drawable.vidra
         );
 
         Random random = new Random();
@@ -47,10 +53,38 @@ public class AnimActivity extends AppCompatActivity {
             imganim2.setImageResource(randomImage2);
 
 
+        Button alegA1 = findViewById(R.id.alegA1);
+        alegA1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent7 = new Intent(AnimActivity.this, AnimActivity.class);
+                startActivity(intent7);
+            }
+        });
+
+        Button alegA2 = findViewById(R.id.alegA2);
+        alegA2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent8 = new Intent(AnimActivity.this, AnimActivity.class);
+                startActivity(intent8);
+            }
+        });
+
+        Button inapoiAn = findViewById(R.id.inapoiAn);
+        inapoiAn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent9 = new Intent(AnimActivity.this, MainActivity.class);
+                intent9.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent9);
+                finish();
+            }
+        });
+
         }
-        public void backbutton (View view){
-            onBackPressed();
-        }
+
+
     }
 
 

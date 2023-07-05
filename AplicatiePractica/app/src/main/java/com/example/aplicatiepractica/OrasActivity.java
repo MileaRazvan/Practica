@@ -1,10 +1,13 @@
 package com.example.aplicatiepractica;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -19,8 +22,11 @@ public class OrasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.orase);
 
+
         ImageView imgoras1 = findViewById(R.id.imgoras1);
+        imgoras1.setScaleType(ImageView.ScaleType.FIT_XY);
         ImageView imgoras2 = findViewById(R.id.imgoras2);
+        imgoras2.setScaleType(ImageView.ScaleType.FIT_XY);
 
         List<Integer> listaOrase = Arrays.asList(
                 R.drawable.braila,
@@ -46,9 +52,42 @@ public class OrasActivity extends AppCompatActivity {
         int randomImage2 = listaOrase.get(RandomIndex2);
         imgoras1.setImageResource(randomImage1);
         imgoras2.setImageResource(randomImage2);
+
+
+
+        Button aleg1 = findViewById(R.id.aleg1);
+        aleg1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(OrasActivity.this, OrasActivity.class);
+                startActivity(intent4);
+            }
+        });
+
+        Button aleg2 = findViewById(R.id.aleg2);
+        aleg2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent(OrasActivity.this, OrasActivity.class);
+                startActivity(intent5);
+            }
+        });
+
+        Button inapoiOr = findViewById(R.id.inapoiOr);
+        inapoiOr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent6 = new Intent(OrasActivity.this, MainActivity.class);
+                intent6.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent6);
+                finish();
+            }
+        });
+
+
     }
 
-    public void backbutton (View view){
-        onBackPressed();
-    }
+
+
+
 }
