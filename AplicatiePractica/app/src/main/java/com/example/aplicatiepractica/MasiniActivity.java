@@ -20,8 +20,31 @@ public class MasiniActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.masini);
+        Nextm();
 
+        Button alegM1 = findViewById(R.id.alegM1);
+        alegM1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {Nextm();}
+            });
 
+        Button alegM2 = findViewById(R.id.alegM2);
+        alegM2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {Nextm();}
+            });
+
+        Button inapoi = findViewById(R.id.inapoi);
+        inapoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+    }
+    public void Nextm (){
         ImageView imgmas1 = findViewById(R.id.imgmas1);
         imgmas1.setScaleType(ImageView.ScaleType.FIT_XY);
         ImageView imgmas2 = findViewById(R.id.imgmas2);
@@ -53,37 +76,6 @@ public class MasiniActivity extends AppCompatActivity {
         int randomImage2 = listaMasini.get(RandomIndex2);
         imgmas1.setImageResource(randomImage1);
         imgmas2.setImageResource(randomImage2);
-
-
-
-        Button alegM1 = findViewById(R.id.alegM1);
-        alegM1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent10 = new Intent(MasiniActivity.this, MasiniActivity.class);
-                startActivity(intent10);
-            }
-        });
-
-        Button alegM2 = findViewById(R.id.alegM2);
-        alegM2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent11 = new Intent(MasiniActivity.this, MasiniActivity.class);
-                startActivity(intent11);
-            }
-        });
-
-        Button inapoi = findViewById(R.id.inapoi);
-        inapoi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent12 = new Intent(MasiniActivity.this, MainActivity.class);
-                intent12.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent12);
-                finish();
-            }
-        });
     }
 
 

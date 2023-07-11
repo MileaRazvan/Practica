@@ -21,9 +21,36 @@ public class OrasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.orase);
+        Nexto();
+
+        Button aleg1 = findViewById(R.id.aleg1);
+        aleg1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Nexto();
+            }
+        });
+
+        Button aleg2 = findViewById(R.id.aleg2);
+        aleg2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Nexto();
+            }
+        });
+
+        Button inapoiOr = findViewById(R.id.inapoiOr);
+        inapoiOr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
 
-        ImageView imgoras1 = findViewById(R.id.imgoras1);
+    }
+
+    public void Nexto(){ImageView imgoras1 = findViewById(R.id.imgoras1);
         imgoras1.setScaleType(ImageView.ScaleType.FIT_XY);
         ImageView imgoras2 = findViewById(R.id.imgoras2);
         imgoras2.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -53,40 +80,7 @@ public class OrasActivity extends AppCompatActivity {
         imgoras1.setImageResource(randomImage1);
         imgoras2.setImageResource(randomImage2);
 
-
-
-        Button aleg1 = findViewById(R.id.aleg1);
-        aleg1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent4 = new Intent(OrasActivity.this, OrasActivity.class);
-                startActivity(intent4);
-            }
-        });
-
-        Button aleg2 = findViewById(R.id.aleg2);
-        aleg2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent5 = new Intent(OrasActivity.this, OrasActivity.class);
-                startActivity(intent5);
-            }
-        });
-
-        Button inapoiOr = findViewById(R.id.inapoiOr);
-        inapoiOr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent6 = new Intent(OrasActivity.this, MainActivity.class);
-                intent6.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent6);
-                finish();
-            }
-        });
-
-
     }
-
 
 
 
