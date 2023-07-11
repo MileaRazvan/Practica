@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button Anim = findViewById(R.id.Anim);
+        Anim.setAlpha(0.8f);
         Anim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button Cars = findViewById(R.id.Cars);
+        Cars.setAlpha(0.8f);
         Cars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button City = findViewById(R.id.City);
+        City.setAlpha(0.8f);
         City.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
